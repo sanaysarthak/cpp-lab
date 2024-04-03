@@ -1,3 +1,5 @@
+// Program in C++ to add two numbers.
+
 #include <iostream>
 using namespace std;
 
