@@ -33,10 +33,10 @@ int main()
     Parent *p = &p1;
     child1 c1;
     child2 c2;
-    p -> show();
+    p -> show(); // Parent Class.
     p = &c1;
-    p -> show();
+    p -> show(); // Child Class 1.
     p = &c2;
-    p -> show(); 
+    p -> show(); // Child Class 2.
     return 0;
 }
