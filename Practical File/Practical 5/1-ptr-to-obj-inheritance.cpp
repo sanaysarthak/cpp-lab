@@ -41,17 +41,17 @@ int main()
 	Rectangle rect;
 	Triangle trg;
 
-    // Pointer to object of base class (parent class) for storing values
-    // Pointer to base class, referring to objects of derived class
+        // Pointer to object of base class (parent class) for storing values
+        // Pointer to base class, referring to objects of derived class
 	Shape* s1 = &rect;
 	Shape* s2 = &trg;
 
 	s1 -> set_values(5,6);
 	s2 -> set_values(5,6);
 
-    // Pointer to object of derived class (child class) for printing area
-    Rectangle*r1 = &rect;
-    Triangle* t1= &trg;
+    	// Pointer to object of derived class (child class) for printing area
+    	Rectangle*r1 = &rect;
+    	Triangle* t1= &trg;
 
 	cout << "Pointers to object (Inherited Class)." << endl;
 	cout << "Area of Rectangle : " << r1 -> area() << endl;
