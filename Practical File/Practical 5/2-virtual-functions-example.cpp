@@ -1,4 +1,4 @@
-// Program in C++ to demonstrate the sue
+// Program in C++ to demonstrate the use of Virtual Functions in class
 /* A virtual function (also known as virtual methods) is a member function that is declared within a base class and is 
 re-defined (overridden) by a derived class. When you refer to a derived class object using a pointer or a reference to 
 the base class, you can call a virtual function for that object and execute the derived class’s version of the method. */
