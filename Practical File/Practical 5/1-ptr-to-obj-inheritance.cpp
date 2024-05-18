@@ -6,56 +6,26 @@ When you have a pointer to a base class, you can use it to refer to objects of b
 #include <iostream>
 using namespace std;
 
-class Shape 
-{
-	protected:
-		int width, height;
-	public:
-		void set_values(int a, int b)
-		{
-			width = a;
-			height = b;
-		}
+class Base {
+    public:
+        void showBase() {
+            cout << "Base" << endl;
+        }
 };
 
-class Rectangle : public Shape 
-{
-	public:
-		int area()
-		{
-			return (width * height);
-		}
+class Derv1 : public Base {
+    public:
+        void showDerived() {
+            cout << "Derv1" << endl;
+        }
 };
 
-class Triangle : public Shape
-{
-	public:
-		int area()
-		{
-			return ((width * height) / 2);
-		}
-};
-
-int main() 
-{
-	Rectangle rect;
-	Triangle trg;
-
-        // Pointer to object of base class (parent class) for storing values
-        // Pointer to base class, referring to objects of derived class
-	Shape* s1 = &rect;
-	Shape* s2 = &trg;
-
-	s1 -> set_values(5,6);
-	s2 -> set_values(5,6);
-
-    	// Pointer to object of derived class (child class) for printing area
-    	Rectangle*r1 = &rect;
-    	Triangle* t1= &trg;
-
-	cout << "Pointers to object (Inherited Class)." << endl;
-	cout << "Area of Rectangle : " << r1 -> area() << endl;
-	cout << "Area of Triangle : " << t1 -> area() << endl;
-
-	return 0;
+int main() {
+    Derv1 dv1;
+    Base *ptr;
+    ptr = &dv1; // you can pass address of derived class object in base class type pointer
+    ptr -> showBase();
+    // ptr -> showDerived(); // error, cannot access derived class member function using base class type pointer
+    ((Derv1*) ptr) -> showDerived(); // explicitly typecasting is required.
+    return 0;
 }
